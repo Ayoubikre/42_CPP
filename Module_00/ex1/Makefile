@@ -1,12 +1,13 @@
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -std=c++98
+# CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Contact.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= main.hpp Contact.hpp
+HEAD= main.hpp Contact.hpp PhoneBook.hpp
 
 NAME = PhoneBook
 
