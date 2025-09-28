@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 02:03:02 by noctis            #+#    #+#             */
-/*   Updated: 2025/09/28 21:49:41 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/09/28 21:50:29 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void PhoneBook::ft_search()
         std::cout << "No contact Found\n";
     else
     {
-        for(int i=0; i<ft_get_count; i++)
+        for(int i=0; i<ft_get_count(); i++)
         {
             
         }
