@@ -1,0 +1,7 @@
+alias ff="c_formatter_42"
+alias nn="norminette"
+alias mf="make fclean"
+alias mc="make clean"
+alias mm="make"
+alias mb="make bonus"
+alias c="clear"
