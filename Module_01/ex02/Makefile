@@ -1,14 +1,15 @@
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -std=c++98
+# CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = 
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = 
+NAME = zombie
 
-all: clean $(NAME)  
+all: clean $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./$(NAME)

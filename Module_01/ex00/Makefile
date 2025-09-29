@@ -2,18 +2,20 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = 
+SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = 
+HEAD= Zombie.hpp
 
-all: clean $(NAME)  
+NAME = zombie
+
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./$(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
