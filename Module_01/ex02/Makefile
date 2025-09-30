@@ -1,7 +1,6 @@
 CC = c++
 
-CFLAGS = -Wall -std=c++98
-# CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp
 
@@ -9,10 +8,10 @@ OBJ = $(SRC:.cpp=.o)
 
 NAME = zombie
 
-all: clean $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./$(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -26,3 +25,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+    w1231w2345670-][p]

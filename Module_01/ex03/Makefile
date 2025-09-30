@@ -1,20 +1,19 @@
 CC = c++
 
-CFLAGS = -Wall -std=c++98
-# CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = 
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= Weapon.hpp HumanA.hpp HumanB.hpp
 
-NAME = zombie
+NAME = Weapon
 
-all: clean $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./$(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@

@@ -3,11 +3,11 @@ CC = c++
 CFLAGS = -Wall -std=c++98
 # CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = 
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= Harl.hpp
 
 NAME = zombie
 

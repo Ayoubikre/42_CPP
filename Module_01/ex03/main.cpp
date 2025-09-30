@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 21:04:27 by aakritah          #+#    #+#             */
-/*   Updated: 2025/09/30 13:45:39 by aakritah         ###   ########.fr       */
+/*   Created: 2025/09/30 14:37:05 by aakritah          #+#    #+#             */
+/*   Updated: 2025/09/30 16:45:01 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int	main(void)
+int main()
 {
-	std::string t = "HI THIS IS BRAIN";
-	std::string *t1 = &t;
-	std::string &t2 = t;
-    
-	std::cout << std::endl;
-	std::cout << "A :" << &t << std::endl;
-	std::cout << "A :" << t1 << std::endl;
-	std::cout << "A :" << &t2 << std::endl;
-	std::cout << std::endl;
-	std::cout << "V :" << t << std::endl;
-	std::cout << "V :" << *t1 << std::endl;
-	std::cout << "V :" << t2 << std::endl;
-	std::cout << std::endl;
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
 }
