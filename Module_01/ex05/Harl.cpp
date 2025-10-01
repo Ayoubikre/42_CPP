@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:34:54 by aakritah          #+#    #+#             */
-/*   Updated: 2025/09/30 21:40:04 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:34:20 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,41 @@ void Harl::debug(void)
 }
 void Harl::info(void)
 {
-    std::cout << "I cannot believe adding extra bacon costs more money. You didnt put enough bacon in my burger! If you did I wouldnt be asking for more!" << std::endl;
+    std::cout << "I cannot believe adding extra bacon costs more money.\nYou didnt put enough bacon in my burger! If you did I wouldnt be asking for more!" << std::endl;
 }
 void Harl::warning(void)
 {
-    std::cout << "I think I deserve to have some extra bacon for free. Ive been coming for years, whereas you started working here just last month." << std::endl;
+    std::cout << "I think I deserve to have some extra bacon for free.\nIve been coming for years, whereas you started working here just last month." << std::endl;
 }
 void Harl::error(void)
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void complain(std::string level)
-{
 
+void Harl::complain(std::string level)
+{
+    int i=-1;
+    std::string t[]={"DEBUG", "INFO", "WARNING", "ERROR"};
+    void (Harl::*f[])(void) = {&Harl::debug, &Harl::info , &Harl::warning , &Harl::error};
+    
+    while(++i<4)
+    {
+        if(level==t[i])
+            break;
+    }
+    
+    switch(i)
+    {
+        case(0):
+            (this->*f[0])(); break;
+        case(1):
+            (this->*f[1])(); break;
+        case(2):
+            (this->*f[2])(); break;
+        case(3):
+            (this->*f[3])(); break;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;  
+    }
 }

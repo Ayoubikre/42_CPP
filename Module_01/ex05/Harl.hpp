@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:34:52 by aakritah          #+#    #+#             */
-/*   Updated: 2025/09/30 19:43:13 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/01 12:57:53 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Harl
 
   public:
 	void complain(std::string level);
-    
+
 };
 
 #endif

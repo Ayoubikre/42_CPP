@@ -1,7 +1,6 @@
 CC = c++
 
-CFLAGS = -Wall -std=c++98
-# CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Harl.cpp
 
@@ -9,12 +8,12 @@ OBJ = $(SRC:.cpp=.o)
 
 HEAD= Harl.hpp
 
-NAME = zombie
+NAME = harlFilter
 
-all: clean $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./$(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
