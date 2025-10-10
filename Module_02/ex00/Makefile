@@ -9,7 +9,7 @@ OBJ = $(SRC:.cpp=.o)
 
 HEAD= 
 
-NAME = 
+NAME = fixed_00
 
 all: clean $(NAME)
 
