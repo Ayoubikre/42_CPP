@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:34:52 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/01 12:57:53 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/10 18:13:10 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <string>
+
+#define ft_log_(x) std::cout << x
+#define ft_log(x) std::cout << x << std::endl
 
 class Harl
 {

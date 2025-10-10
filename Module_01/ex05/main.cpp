@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:35:07 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/01 13:37:09 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/10 18:09:37 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ int main()
 {
     Harl h;
     
-    h.complain("DEBUG");
-        std::cout << std::endl;
-    h.complain("INFO");
-        std::cout << std::endl;
-    h.complain("WARNING");
-        std::cout << std::endl;
-    h.complain("ERROR");
-        std::cout << std::endl;
-    h.complain("Random");
-        std::cout << std::endl;
+    h.complain("DEBUG");ft_log("");
+
+    h.complain("INFO");ft_log("");
+
+    h.complain("WARNING");ft_log("");
+
+    h.complain("ERROR");ft_log("");
+
+    h.complain("Random");ft_log("");
         
     return 0;
 }
