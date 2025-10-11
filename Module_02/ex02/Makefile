@@ -3,13 +3,13 @@ CC = c++
 CFLAGS = -Wall -std=c++98
 # CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= Fixed.hpp
 
-NAME = 
+NAME = fixed
 
 all: clean $(NAME)
 
