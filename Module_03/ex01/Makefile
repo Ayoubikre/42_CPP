@@ -3,13 +3,13 @@ CC = c++
 CFLAGS = -Wall -std=c++98
 # CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= Fixed.hpp Point.hpp
+HEAD= ClapTrap.hpp FragTrap.hpp
 
-NAME = fixed
+NAME = trap
 
 all: clean $(NAME)
 
