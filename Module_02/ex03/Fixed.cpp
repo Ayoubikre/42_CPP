@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 20:27:30 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/12 15:45:44 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/12 18:44:06 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,13 +114,13 @@ Fixed Fixed::operator -(const Fixed & tmp) const{
 
 Fixed Fixed::operator *(const Fixed & tmp) const{
     Fixed rs;
-    rs.fixed_n = (this->fixed_n*tmp.fixed_n)/(1 << this->f_bits);
+    rs.fixed_n = (this->fixed_n*tmp.fixed_n) / (1 << this->f_bits);
     return rs ;
 }
 
 Fixed Fixed::operator /(const Fixed & tmp) const{
     Fixed rs;
-    rs.fixed_n = (this->fixed_n/tmp.fixed_n)*(1 << this->f_bits);
+    rs.fixed_n = ((this->fixed_n *(1 << this->f_bits)) / tmp.fixed_n);
     return rs;
 }
 

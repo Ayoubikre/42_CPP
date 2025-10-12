@@ -6,24 +6,35 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 20:27:22 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/12 15:51:30 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/12 18:55:22 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int	main(void)
-{    
-	Fixed a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
+{
+    const Point  a(Fixed(1), Fixed(1));
+    const Point  b(Fixed(4), Fixed(2));
+    const Point  c(Fixed(2), Fixed(5));
+    const Point  i(Fixed(3), Fixed(3));
+
+    // ft_log("--------");
+    //     ft_log(a.get_x());
+    //     ft_log(a.get_y());
+    // ft_log("--------");
+    //     ft_log(b.get_x());
+    //     ft_log(b.get_y());
+    // ft_log("--------");
+    //     ft_log(c.get_x());
+    //     ft_log(c.get_y());
+    // ft_log("--------");
+    //     ft_log(i.get_x());
+    //     ft_log(i.get_y());
+    // ft_log("--------");
     
-    ft_log(a);
-    ft_log(++a);
-    ft_log(a);
-    ft_log(a++);
-    ft_log(a);
-    ft_log(b);
-    ft_log(Fixed::max(a, b));
+    ft_log(bsp(a,b,c,i));
     
 	return (0);
 }
