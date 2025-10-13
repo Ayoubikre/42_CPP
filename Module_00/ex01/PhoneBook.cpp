@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:42:48 by aakritah          #+#    #+#             */
-/*   Updated: 2025/09/29 14:56:54 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/13 13:29:10 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ std::string PhoneBook::ft_ask(std::string msg, int f, int max)
             break;
         if(f==1 && !tmp.empty() && ft_isdigit(tmp))
             break;
-        if(f==2 && !tmp.empty() && ft_isdigit(tmp) && 0 <= std::atoi(tmp.c_str()) && std::atoi(tmp.c_str()) <= max)
+        if(f==2 && !tmp.empty() && ft_isdigit(tmp) && 0 <= std::atoi(tmp.c_str()) && std::atoi(tmp.c_str()) < max)
             break;
             
         if(f==2)
