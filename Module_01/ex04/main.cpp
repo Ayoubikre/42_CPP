@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 18:09:36 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/10 18:07:05 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/13 14:49:28 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ void ft_replace(std::ifstream& in_f, std::ofstream& out_f,std::string old, std::
     size_t i;
     std::string t; 
     
-    if(old.empty())
-        return ;
+    if(old.empty()){
+        ft_log("string is empty");
+        return;
+    }
     while(std::getline(in_f,t))
     {
         i=t.find(old);
@@ -30,6 +32,10 @@ void ft_replace(std::ifstream& in_f, std::ofstream& out_f,std::string old, std::
             i=t.find(old, i+nw.length());
         }
         out_f << t << std::endl;
+        if (out_f.fail()) {
+            ft_log("Write error");
+            return;
+        }
     }
 }
 

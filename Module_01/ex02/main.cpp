@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 21:04:27 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/10 17:51:30 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/13 14:38:29 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@
 int	main(void)
 {
 	std::string t = "HI THIS IS BRAIN";
-	std::string *t1 = &t;
-	std::string &t2 = t;
+	std::string *stringPTR = &t;
+	std::string &stringREF = t;
 	
 	ft_log("");
 	
 	ft_log_("A : ");ft_log(&t);
-	ft_log_("A : ");ft_log(t1);
-	ft_log_("A : ");ft_log(&t2);
+	ft_log_("A : ");ft_log(stringPTR);
+	ft_log_("A : ");ft_log(&stringREF);
 	
 	ft_log("");
 
 	ft_log_("V : ");ft_log(t);
-	ft_log_("V : ");ft_log(*t1);
-	ft_log_("V : ");ft_log(t2);
+	ft_log_("V : ");ft_log(*stringPTR);
+	ft_log_("V : ");ft_log(stringREF);
 
 	ft_log("");
 	
