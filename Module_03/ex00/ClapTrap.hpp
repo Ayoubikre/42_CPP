@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:23:08 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/12 21:04:33 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/14 21:39:54 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 class ClapTrap{
     private:
         std::string name;
-        int health;
-        int energy;
-        int damage;
+        unsigned int health;
+        unsigned int energy;
+        unsigned int damage;
 
     public:
         ClapTrap(std::string tmp);
