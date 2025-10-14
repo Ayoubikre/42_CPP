@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:23:13 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 21:44:45 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/14 22:47:23 by noctis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ClapTrap::~ClapTrap()
 void ClapTrap::attack(const std::string& target){
     if(health==0 || energy==0)
         return ;
-    ft_log("ClapTrap "+ name +" attacks "+ target +" , causing "+ std::to_string(damage) +" points of damage!");
+    ft_log("ClapTrap "+ name +" attacks "+ target +" , causing " << damage << " points of damage!");
     energy--;
 }
 

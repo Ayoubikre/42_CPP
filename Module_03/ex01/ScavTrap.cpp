@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 21:30:32 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 21:50:00 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/14 22:59:14 by noctis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-    ft_log("ScavTrap is now in gate keeper mode");
+    ft_log("ScavTrap "+ name +" is now in gate keeper mode");
 }
 
 void ScavTrap::attack(const std::string& target){
     if(health==0 || energy==0)
         return ;
-    ft_log("ScavTrap "+ name +" attacks "+ target +" , causing "+ std::to_string(damage) +" points of damage!");
+    ft_log("ScavTrap "+ name +" attacks "+ target +" , causing " << damage << " points of damage!");
     energy--;
 }
