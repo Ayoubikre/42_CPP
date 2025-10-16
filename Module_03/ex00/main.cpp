@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:23:06 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 21:46:40 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/16 21:39:23 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main()
 {
-    ClapTrap a1("foo");
+    ClapTrap a1("iii");
     ft_log("--------------");
-    a1.attack("fuu");
+    a1.attack("ooo");
     ft_log("--------------");
     a1.takeDamage(2);
     ft_log("--------------");

@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:23:08 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 21:39:01 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/16 21:08:09 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #define ft_log(x)  std::cout << x << std::endl
 
 class ClapTrap{
-    private:
+    protected:
         std::string name;
         unsigned int health;
         unsigned int energy;

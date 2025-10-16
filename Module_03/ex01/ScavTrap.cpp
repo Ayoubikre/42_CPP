@@ -3,23 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 21:30:32 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 22:59:14 by noctis           ###   ########.fr       */
+/*   Updated: 2025/10/16 21:32:03 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string tmp): ClapTrap(tmp), name(tmp), health(100), energy(50), damage(20)
+ScavTrap::ScavTrap(std::string tmp): ClapTrap(tmp)
 {
     ft_log("ScavTrap Default constructor called");
+    health=100;
+    energy=50;
+    damage=20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& tmp): ClapTrap(tmp.name), name(tmp.name), health(tmp.health), energy(tmp.energy), damage(tmp.damage)
+ScavTrap::ScavTrap(const ScavTrap& tmp): ClapTrap(tmp.name)
 {
     ft_log("ScavTrap copy constructor called");
+    health=100;
+    energy=50;
+    damage=20;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& tmp)

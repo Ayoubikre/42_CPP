@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:23:06 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 23:00:15 by noctis           ###   ########.fr       */
+/*   Updated: 2025/10/16 21:39:13 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 {
     FragTrap a("iii");
     ft_log("--------------");
-    a.attack("uuu");
+    a.attack("ooo");
     a.highFivesGuys();
     ft_log("--------------");
     a.takeDamage(10);

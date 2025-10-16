@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:51:49 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 22:57:14 by noctis           ###   ########.fr       */
+/*   Updated: 2025/10/16 21:39:47 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@
 #define ft_log(x)  std::cout << x << std::endl
 
 class FragTrap: public ClapTrap{
-    private:
-        std::string name;
-        unsigned int health;
-        unsigned int energy;
-        unsigned int damage;
     public:
         FragTrap(std::string tmp);
         FragTrap(const FragTrap& tmp);

@@ -3,23 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:51:46 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 22:58:53 by noctis           ###   ########.fr       */
+/*   Updated: 2025/10/16 21:37:45 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string tmp): ClapTrap(tmp), name(tmp), health(100), energy(100), damage(30)
+FragTrap::FragTrap(std::string tmp): ClapTrap(tmp)
 {
     ft_log("FragTrap Default constructor called");
+    health=100;
+    energy=100;
+    damage=30;
 }
 
-FragTrap::FragTrap(const FragTrap& tmp): ClapTrap(tmp.name), name(tmp.name), health(tmp.health), energy(tmp.energy), damage(tmp.damage)
+FragTrap::FragTrap(const FragTrap& tmp): ClapTrap(tmp.name)
 {
     ft_log("FragTrap copy constructor called");
+    health=100;
+    energy=100;
+    damage=30;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& tmp)

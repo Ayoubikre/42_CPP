@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noctis <noctis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:23:13 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/14 22:47:23 by noctis           ###   ########.fr       */
+/*   Updated: 2025/10/16 20:59:09 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void ClapTrap::beRepaired(unsigned int amount){
     if(health==0 || energy==0)
         return ;
     ft_log("ClapTrap is in Repaired Mode");
-    for(unsigned int i=0;i<amount && health < 20; i++)
-        health++;
+    health += amount;
     energy--;
 }
