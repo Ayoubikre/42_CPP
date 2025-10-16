@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 20:27:22 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/12 18:55:22 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:40:20 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 int	main(void)
 {
+    const Point  i(Fixed(3), Fixed(3));
+    
     const Point  a(Fixed(1), Fixed(1));
     const Point  b(Fixed(4), Fixed(2));
     const Point  c(Fixed(2), Fixed(5));
-    const Point  i(Fixed(3), Fixed(3));
 
     // ft_log("--------");
     //     ft_log(a.get_x());
