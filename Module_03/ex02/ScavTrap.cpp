@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 21:30:32 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/16 21:32:03 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:55:54 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ ScavTrap::ScavTrap(std::string tmp): ClapTrap(tmp)
 ScavTrap::ScavTrap(const ScavTrap& tmp): ClapTrap(tmp.name)
 {
     ft_log("ScavTrap copy constructor called");
-    health=100;
-    energy=50;
-    damage=20;
+    this->name=tmp.name;   
+    this->health=tmp.health;   
+    this->energy=tmp.energy;   
+    this->damage=tmp.damage;   
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& tmp)

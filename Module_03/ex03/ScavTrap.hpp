@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 21:30:31 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/16 21:35:51 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/17 12:01:29 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #define ft_log_(x) std::cout << x
 #define ft_log(x)  std::cout << x << std::endl
 
-class ScavTrap: public ClapTrap{
+class ScavTrap: virtual public ClapTrap{
     public:
         ScavTrap(std::string tmp);
         ScavTrap(const ScavTrap& tmp);

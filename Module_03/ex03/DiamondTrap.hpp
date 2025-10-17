@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:41:32 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/16 21:51:07 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:29:26 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 #define ft_log_(x) std::cout << x
 #define ft_log(x)  std::cout << x << std::endl
 
-class DiamondTrap: public ScavTrap, public FragTrap{
+class DiamondTrap: public ScavTrap , public FragTrap{
     private:
         std::string name;
         
@@ -33,9 +33,9 @@ class DiamondTrap: public ScavTrap, public FragTrap{
         DiamondTrap(const DiamondTrap& tmp);
         DiamondTrap& operator=(const DiamondTrap& tmp);
         ~DiamondTrap();
-    
+        
+        void attack(const std::string& target);
         void whoAmI();
 };
-
 
 #endif

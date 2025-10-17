@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:51:49 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/16 21:39:47 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/17 12:01:27 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #define ft_log_(x) std::cout << x
 #define ft_log(x)  std::cout << x << std::endl
 
-class FragTrap: public ClapTrap{
+class FragTrap: virtual public ClapTrap{
     public:
         FragTrap(std::string tmp);
         FragTrap(const FragTrap& tmp);

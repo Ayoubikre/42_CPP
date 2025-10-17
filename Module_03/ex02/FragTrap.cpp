@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:51:46 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/16 21:37:45 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:55:40 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ FragTrap::FragTrap(std::string tmp): ClapTrap(tmp)
 FragTrap::FragTrap(const FragTrap& tmp): ClapTrap(tmp.name)
 {
     ft_log("FragTrap copy constructor called");
-    health=100;
-    energy=100;
-    damage=30;
+    this->name=tmp.name;   
+    this->health=tmp.health;   
+    this->energy=tmp.energy;   
+    this->damage=tmp.damage;   
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& tmp)

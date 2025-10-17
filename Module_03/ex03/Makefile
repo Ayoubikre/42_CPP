@@ -1,7 +1,6 @@
 CC = c++
 
-CFLAGS = -Wall -std=c++98
-# CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
@@ -11,10 +10,10 @@ HEAD= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 NAME = trap
 
-all: clean $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./$(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
