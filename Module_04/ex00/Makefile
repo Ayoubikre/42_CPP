@@ -1,15 +1,15 @@
 CC = c++
 
-CFLAGS = -Wall -std=c++98
+CFLAGS = -Wall -std=c++11
 # CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= main.hpp
 
-NAME = trap
+NAME = ex0
 
 all: clean $(NAME)
 
