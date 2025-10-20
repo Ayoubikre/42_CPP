@@ -3,13 +3,13 @@ CC = c++
 CFLAGS = -Wall -std=c++98
 # CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp 
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= main.hpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
 
-NAME = trap
+NAME = ex1
 
 all: clean $(NAME)
 
