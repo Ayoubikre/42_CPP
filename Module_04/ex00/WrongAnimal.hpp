@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 14:22:47 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 13:12:14 by aakritah         ###   ########.fr       */
+/*   Created: 2025/10/20 13:01:31 by aakritah          #+#    #+#             */
+/*   Updated: 2025/10/20 13:09:04 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-# define MAIN_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include <iostream>
-# include <string>
+#include "main.hpp"
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+class WrongAnimal{
+    
+    protected:
+        std::string type;
+        
+    public:
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal& tmp);
+        WrongAnimal& operator=(const WrongAnimal &tmp);
+        virtual ~WrongAnimal();
 
+        void makeSound() const;
+        const std::string getType() const;
 
-#define ft_log_(x) std::cout << x
-#define ft_log(x) std::cout << x << std::endl
-
-
-int		main();
-
+};
 
 #endif
