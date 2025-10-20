@@ -1,45 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 14:22:47 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 21:49:55 by aakritah         ###   ########.fr       */
+/*   Created: 2025/10/20 21:17:59 by aakritah          #+#    #+#             */
+/*   Updated: 2025/10/20 21:48:56 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-# define MAIN_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-# include <iostream>
-# include <string>
+#include "main.hpp"
 
-#include "AMateria.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "ICharacter.hpp"
-#include "Character.hpp"
+class Ice : public AMateria{
+    public:
+        Ice(std::string const & tmp = "ice");
+        Ice(const Ice& tmp);
+        Ice& operator=(const Ice &tmp);
+        ~Ice();
 
-
-#define ft_log_(x) std::cout << x
-#define ft_log(x) std::cout << x << std::endl
-
-
-int		main();
-
+        virtual Ice* clone() const;
+        // virtual void use(ICharacter& target);
+};
 
 #endif
-
-
-// AMateria
-//     ice
-//     cure
-
-
-// charchter
-// ICharacter
-
-// MateriaSource
-// IMateriaSource

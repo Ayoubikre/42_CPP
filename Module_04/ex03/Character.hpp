@@ -1,45 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 14:22:47 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 21:49:55 by aakritah         ###   ########.fr       */
+/*   Created: 2025/10/20 21:48:04 by aakritah          #+#    #+#             */
+/*   Updated: 2025/10/20 21:48:51 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-# define MAIN_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-# include <iostream>
-# include <string>
+#include "main.hpp"
 
-#include "AMateria.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "ICharacter.hpp"
-#include "Character.hpp"
+class Character : public ICharacter{
+    public:
 
-
-#define ft_log_(x) std::cout << x
-#define ft_log(x) std::cout << x << std::endl
-
-
-int		main();
-
+};
 
 #endif
-
-
-// AMateria
-//     ice
-//     cure
-
-
-// charchter
-// ICharacter
-
-// MateriaSource
-// IMateriaSource

@@ -3,13 +3,13 @@ CC = c++
 CFLAGS = -Wall -std=c++98
 # CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp 
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= main.hpp AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp
 
-NAME = ex03
+NAME = ex3
 
 all: clean $(NAME)
 
@@ -28,6 +28,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
- nmxewrwdp;['];,./.q1\'
- m n/']
