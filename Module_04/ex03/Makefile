@@ -9,7 +9,7 @@ OBJ = $(SRC:.cpp=.o)
 
 HEAD= 
 
-NAME = trap
+NAME = ex03
 
 all: clean $(NAME)
 
@@ -29,3 +29,5 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
+ nmxewrwdp;['];,./.q1\'
+ m n/']

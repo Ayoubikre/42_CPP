@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:43:17 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 13:46:03 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/20 14:14:42 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ Dog& Dog::operator=(const Dog& tmp)
 
 Dog::~Dog()
 {
-    ft_log("Dog Default Distructor called");
     delete br;
+    ft_log("Dog Default Distructor called");
 }
 
 void Dog::makeSound() const

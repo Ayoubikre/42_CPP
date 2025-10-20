@@ -1,49 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:43:25 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 14:14:38 by aakritah         ###   ########.fr       */
+/*   Created: 2025/10/20 13:05:24 by aakritah          #+#    #+#             */
+/*   Updated: 2025/10/20 13:05:52 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-Cat::Cat(std::string tmp): Animal()
+WrongCat::WrongCat(std::string tmp): WrongAnimal()
 {
-    ft_log("Cat Default constructor called");
+    ft_log("WrongCat Default constructor called");
     this->type=tmp;
-    br= new Brain();
 }
 
-Cat::Cat(const Cat& tmp): Animal(), br(new Brain(*tmp.br))
+WrongCat::WrongCat(const WrongCat& tmp): WrongAnimal()
 {
-    ft_log("Cat copy constructor called");
+    ft_log("WrongCat copy constructor called");
     this->type=tmp.type;
 }
 
-Cat& Cat::operator=(const Cat& tmp)
+WrongCat& WrongCat::operator=(const WrongCat& tmp)
 {
-    ft_log("Cat Copy assignment operator called");
+    ft_log("WrongCat Copy assignment operator called");
     if(this != &tmp)
     {
         this->type=tmp.type;
-        delete this->br;
-        this->br= new Brain(*tmp.br);
     }
     return *this;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    delete br;
-    ft_log("Cat Default Distructor called");
+    ft_log("WrongCat Default Distructor called");
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-    ft_log("S............CAT............S");
+    ft_log("S............W_C............S");
 }
