@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:17:59 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 21:48:56 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:59:53 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Ice : public AMateria{
         Ice& operator=(const Ice &tmp);
         ~Ice();
 
-        virtual Ice* clone() const;
-        // virtual void use(ICharacter& target);
+        Ice* clone() const;
+        void use(ICharacter& target);
 };
 
 #endif

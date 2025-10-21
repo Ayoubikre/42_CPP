@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:18:01 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 21:47:28 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/21 21:36:35 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Ice::Ice(const Ice &tmp): AMateria(tmp){
 
 Ice& Ice::operator=(const Ice &tmp){
     ft_log("Ice Copy assignment operator called");
+    (void) tmp;
     return *this;
 }
 
@@ -33,6 +34,6 @@ Ice* Ice::clone() const{
     return new Ice("ice");
 }
 
-// void Ice::use(ICharacter& target){
-//     ft_log("* shoots an ice bolt at "<< target.getName() <<" *")
-// }
+void Ice::use(ICharacter& target){
+    ft_log("* shoots an ice bolt at "<< target.getName() <<" *");
+}

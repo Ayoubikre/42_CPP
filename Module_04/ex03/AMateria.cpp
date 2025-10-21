@@ -12,7 +12,26 @@
 
 #include "main.hpp"
 
-  rn type;
+AMateria::AMateria(std::string const & tmp): type(tmp) {
+    ft_log("AMateria Default constructor called");
 }
 
-// void AMateria::use(ICharacter& target){}
+AMateria::AMateria(const AMateria &tmp): type(tmp.type) {
+    ft_log("AMateria copy constructor called");
+}
+
+AMateria& AMateria::operator=(const AMateria &tmp){
+    ft_log("AMateria Copy assignment operator called");
+    (void) tmp;
+    return *this;
+}
+
+AMateria::~AMateria(){
+    ft_log("AMateria Default Distructor called");
+}
+
+std::string const& AMateria::getType() const {
+    return type;
+}
+
+void AMateria::use(ICharacter& target){ (void) target;}

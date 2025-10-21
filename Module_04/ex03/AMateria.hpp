@@ -6,7 +6,7 @@
 /*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:56:05 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 21:49:05 by aakritah         ###   ########.fr       */
+/*   Updated: 2025/10/21 18:19:49 by aakritah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define AMATERIA_HPP
 
 #include "main.hpp"
+
+class ICharacter; 
 
 class AMateria{
     protected:
@@ -23,11 +25,11 @@ class AMateria{
         AMateria(std::string const & tmp);
         AMateria(const AMateria& tmp);
         AMateria& operator=(const AMateria &tmp);
-        ~AMateria();
+        virtual ~AMateria();
 
         std::string const& getType() const;
         virtual AMateria* clone() const = 0;
-        // virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target);
 
 };
 
