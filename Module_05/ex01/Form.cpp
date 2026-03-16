@@ -1,6 +1,5 @@
 #include "Form.hpp"
 
-
 Form::Form(std::string name, const int grade_to_signe, const int grade_to_execute):name(name),sign(0),grade_to_signe(grade_to_signe),grade_to_execute(grade_to_execute)
 {
     if(grade_to_signe < 1)
@@ -60,6 +59,6 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream& operator<<(std::ostream& out, const Form& tmp)
 {
-    out << 
+    // out << 
     return out;
 }
