@@ -3,11 +3,9 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Bureaucrat.cpp 
-# SRC = main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
 HEAD= Bureaucrat.hpp
 
 NAME = Ex
