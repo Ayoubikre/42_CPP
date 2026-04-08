@@ -1,29 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:17:59 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/21 17:59:53 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef ICE_HPP
-#define ICE_HPP
+#pragma once 
 
 #include "main.hpp"
 
-class Ice : public AMateria{
+class Ice: public AMateria
+{
     public:
-        Ice(std::string const & tmp = "ice");
+        Ice();
         Ice(const Ice& tmp);
-        Ice& operator=(const Ice &tmp);
-        ~Ice();
+        Ice& operator=(const Ice& tmp);
+        virtual ~Ice();
 
-        Ice* clone() const;
-        void use(ICharacter& target);
+        virtual AMateria* clone() const ;
+        virtual void use(ICharacter& target);
 };
-
-#endif

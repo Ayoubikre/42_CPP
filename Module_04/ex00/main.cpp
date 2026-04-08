@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 14:22:40 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 15:39:31 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-// void t(){ system("leaks -q ex0"); }
+// void t(){ system("leaks -q Ex"); }
 
 int main()
 {
@@ -22,8 +10,8 @@ int main()
     const Animal* meta = new Animal();
     
     ft_log("__________________");
-    std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
+    std::cout << j->getType() << " " << std::endl; 
     std::cout << meta->getType() << " " << std::endl;
     
     i->makeSound();

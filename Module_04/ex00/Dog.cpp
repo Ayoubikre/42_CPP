@@ -1,27 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:43:17 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 12:46:27 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-Dog::Dog(std::string tmp): Animal()
+Dog::Dog(std::string name): Animal()
 {
     ft_log("Dog Default constructor called");
-    this->type=tmp;
+    this->type=name;
 }
 
-Dog::Dog(const Dog& tmp): Animal()
+Dog::Dog(const Dog& tmp): Animal(tmp)
 {
     ft_log("Dog copy constructor called");
-    this->type=tmp.type;
 }
 
 Dog& Dog::operator=(const Dog& tmp)
@@ -36,7 +23,7 @@ Dog& Dog::operator=(const Dog& tmp)
 
 Dog::~Dog()
 {
-    ft_log("DOG Default Distructor called");
+    ft_log("Dog Default Distructor called");
 }
 
 void Dog::makeSound() const

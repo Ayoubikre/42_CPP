@@ -1,36 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 14:22:40 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 14:08:23 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-// void t(){ system("leaks -q ex1"); }
+// void t(){ system("leaks -q Ex"); }
 
 int main()
 {
     // atexit(t);
-    
-    const Animal* t[100] ;
-    
-    for(int i=0;i<2;i++)
-        t[i] = new Cat();
-        
-    for(int i=2;i<4;i++)
-        t[i] = new Dog();
-            
-    for(int i=0;i<4;i++)
-        t[i]->makeSound();    
-        
-    for(int i=0;i<4;i++)
-        delete t[i];    
+    const Cat* x = new Cat();
+    const Cat* y = new Cat(*x);
 
+    ft_log("__________________");
+
+        x->ft_print_ideas();
+
+    ft_log("__________________");
+
+        y->ft_print_ideas();
+
+    ft_log("__________________");
+
+    delete x;
+    delete y;
+
+    ft_log("__________________");
     return 0;
 }

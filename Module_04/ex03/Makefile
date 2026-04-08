@@ -8,7 +8,7 @@ OBJ = $(SRC:.cpp=.o)
 
 HEAD= main.hpp AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp
 
-NAME = ex3
+NAME = Ex
 
 all: $(NAME)
 

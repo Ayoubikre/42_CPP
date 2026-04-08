@@ -1,28 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:43:17 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 14:14:42 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-Dog::Dog(std::string tmp): Animal()
+Dog::Dog(std::string name): Animal()
 {
     ft_log("Dog Default constructor called");
-    this->type=tmp;
-    br= new Brain();
+    this->type=name;
+    iq= new Brain();
 }
 
-Dog::Dog(const Dog& tmp): Animal(), br(new Brain(*tmp.br))
+Dog::Dog(const Dog& tmp): Animal(tmp)
 {
     ft_log("Dog copy constructor called");
-    this->type=tmp.type;
+    iq= new Brain(*(tmp.iq));
 }
 
 Dog& Dog::operator=(const Dog& tmp)
@@ -31,19 +19,24 @@ Dog& Dog::operator=(const Dog& tmp)
     if(this != &tmp)
     {
         this->type=tmp.type;
-        delete this->br;
-        this->br= new Brain(*tmp.br);
+        delete iq;
+        iq = new Brain(*(tmp.iq));
     }
     return *this;
 }
 
 Dog::~Dog()
 {
-    delete br;
     ft_log("Dog Default Distructor called");
+    delete iq;
 }
 
 void Dog::makeSound() const
 {
     ft_log("S............DOG............S");
+}
+
+void Dog::ft_print_ideas() const
+{
+    iq->ft_print_ideas();
 }

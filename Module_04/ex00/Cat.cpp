@@ -1,27 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:43:25 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 12:59:35 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-Cat::Cat(std::string tmp): Animal()
+Cat::Cat(std::string name): Animal()
 {
     ft_log("Cat Default constructor called");
-    this->type=tmp;
+    this->type=name;
 }
 
-Cat::Cat(const Cat& tmp): Animal()
+Cat::Cat(const Cat& tmp): Animal(tmp)
 {
     ft_log("Cat copy constructor called");
-    this->type=tmp.type;
 }
 
 Cat& Cat::operator=(const Cat& tmp)

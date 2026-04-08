@@ -8,7 +8,7 @@ OBJ = $(SRC:.cpp=.o)
 
 HEAD= main.hpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
-NAME = ex0
+NAME = Ex
 
 all: $(NAME)
 

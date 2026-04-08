@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:47:44 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 13:11:46 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-Animal::Animal():type("Unknown")
+Animal::Animal(std::string name):type(name)
 {
     ft_log("Animal Default constructor called");
 }
@@ -42,4 +30,7 @@ void Animal::makeSound() const
     ft_log("S.............A.............S");
 }
 
-const std::string Animal::getType() const { return type; }
+const std::string Animal::getType() const
+{
+    return type;
+}

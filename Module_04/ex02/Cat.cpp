@@ -1,28 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:43:25 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 14:14:14 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-Cat::Cat(std::string tmp): Animal()
+Cat::Cat(std::string name): Animal()
 {
     ft_log("Cat Default constructor called");
-    this->type=tmp;
-    br= new Brain();
+    this->type=name;
+    iq= new Brain();
 }
 
-Cat::Cat(const Cat& tmp): Animal(), br(new Brain(*tmp.br))
+Cat::Cat(const Cat& tmp): Animal(tmp)
 {
     ft_log("Cat copy constructor called");
-    this->type=tmp.type;
+    iq= new Brain(*(tmp.iq));
 }
 
 Cat& Cat::operator=(const Cat& tmp)
@@ -31,19 +19,24 @@ Cat& Cat::operator=(const Cat& tmp)
     if(this != &tmp)
     {
         this->type=tmp.type;
-        delete this->br;
-        this->br= new Brain(*tmp.br);
+        delete iq;
+        iq = new Brain(*(tmp.iq));
     }
     return *this;
 }
 
 Cat::~Cat()
 {
-    delete br;
     ft_log("Cat Default Distructor called");
+    delete iq;
 }
 
 void Cat::makeSound() const
 {
     ft_log("S............CAT............S");
+}
+
+void Cat::ft_print_ideas() const
+{
+    iq->ft_print_ideas();
 }

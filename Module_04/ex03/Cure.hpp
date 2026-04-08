@@ -1,29 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:17:56 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/21 18:08:53 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef CURE_HPP
-#define CURE_HPP
+#pragma once 
 
 #include "main.hpp"
 
-class Cure : public AMateria{
+class Cure: public AMateria
+{
     public:
-        Cure(std::string const & tmp = "cure");
+        Cure();
         Cure(const Cure& tmp);
-        Cure& operator=(const Cure &tmp);
-        ~Cure();
+        Cure& operator=(const Cure& tmp);
+        virtual  ~Cure();
 
-        Cure* clone() const;
-        void use(ICharacter& target);
+        virtual AMateria* clone() const ;
+        virtual void use(ICharacter& target);
 };
-
-#endif

@@ -1,37 +1,36 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */ 
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 15:56:03 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 21:09:57 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-AMateria::AMateria(std::string const & tmp): type(tmp) {
+AMateria::AMateria(std::string const & type):type(type)
+{
     ft_log("AMateria Default constructor called");
 }
 
-AMateria::AMateria(const AMateria &tmp): type(tmp.type) {
+AMateria::AMateria(const AMateria& tmp):type(tmp.type)
+{
     ft_log("AMateria copy constructor called");
 }
 
-AMateria& AMateria::operator=(const AMateria &tmp){
+AMateria& AMateria::operator=(const AMateria& tmp)
+{
     ft_log("AMateria Copy assignment operator called");
-    (void) tmp;
+    if(this != &tmp)
+    {
+    }
     return *this;
 }
 
-AMateria::~AMateria(){
+AMateria::~AMateria()
+{
     ft_log("AMateria Default Distructor called");
 }
 
-std::string const& AMateria::getType() const {
-    return type;
+
+std::string const & AMateria::getType() const
+{
+    return this->type;
 }
 
-void AMateria::use(ICharacter& target){ (void) target;}
+void AMateria::use(ICharacter& target)
+{
+    ft_log("Nothing to be done here" << target.getName());
+}

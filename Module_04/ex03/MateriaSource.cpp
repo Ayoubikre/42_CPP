@@ -1,76 +1,70 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 18:24:48 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/21 21:34:09 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-MateriaSource::MateriaSource(){
+MateriaSource::MateriaSource()
+{
     ft_log("MateriaSource Default constructor called");
-    for(int i=0; i<4; i++)
-        t[i]= NULL;
+    for(int i=0;i<4;i++)
+        src[i]=NULL;
 }
 
-MateriaSource::MateriaSource(const MateriaSource& tmp){
+MateriaSource::MateriaSource(const MateriaSource& tmp)
+{
     ft_log("MateriaSource copy constructor called");
     for(int i=0;i<4;i++)
     {
-        t[i]=NULL;
-        if(tmp.t[i])
-            t[i]=tmp.t[i]->clone();
+        if(tmp.src[i])
+            src[i]=tmp.src[i]->clone();
+        else
+            src[i]=NULL;
     }
 }
 
-MateriaSource& MateriaSource::operator=(const MateriaSource& tmp){
+MateriaSource& MateriaSource::operator=(const MateriaSource& tmp)
+{
     ft_log("MateriaSource Copy assignment operator called");
     if(this != &tmp)
     {
         for(int i=0;i<4;i++)
         {
-            delete t[i];
-            this->t[i]=NULL;
-            if(tmp.t[i])
-                this->t[i]=tmp.t[i]->clone();
+            delete(src[i]);
+            if(tmp.src[i])
+                this->src[i]=tmp.src[i]->clone();
+            else
+                this->src[i]=NULL;
         }
     }
     return *this;
 }
 
-MateriaSource::~MateriaSource(){
+MateriaSource::~MateriaSource()
+{
     ft_log("MateriaSource Default Distructor called");
     for(int i=0;i<4;i++)
-    {
-        if(t[i])
-            delete t[i];
-        t[i] = NULL;
-    }
+        delete(src[i]);
 }
 
-void MateriaSource::learnMateria(AMateria* m){
-    if(!m)
-        return;
-    for(int i=0; i<4 ;i++)
-    {
-        if(!t[i])
-        {
-            t[i] = m;
-            break;
-        }
-    }
-}
 
-AMateria* MateriaSource::createMateria(std::string const & type){
+void MateriaSource::learnMateria(AMateria* x)
+{
     for(int i=0;i<4;i++)
     {
-        if(t[i] && t[i]->getType()==type)
-            return t[i]->clone();
+        if(!src[i])
+        {
+            src[i]=x;
+            return;
+        }
+    }
+    delete(x);
+}
+
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
+    for(int i=0;i<4;i++)
+    {
+        if(src[i] && src[i]->getType()==type)
+        {
+            return src[i]->clone();
+        }
     }
     return NULL;
 }

@@ -1,35 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:48:04 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/21 18:13:24 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#pragma once 
 
 #include "main.hpp"
 
-class Character : public ICharacter{
+class AMateria;
+
+class Character: public ICharacter
+{
     private:
         std::string name;
-        AMateria* t[4];
-    
+        AMateria* inv[4];
+
+        int n;
+        AMateria* trash[100];
+        
     public:
-        Character(std::string tmp);
+        Character(std::string name);
         Character(const Character& tmp);
         Character& operator=(const Character& tmp);
-        ~Character();
-
-        std::string const & getName() const;
-        void equip(AMateria* m);
-        void unequip(int idx);
-        void use(int idx, ICharacter& target);
+        virtual ~Character();
+        
+        virtual std::string const & getName() const;
+        virtual void equip(AMateria* m);
+        virtual void unequip(int idx);
+        virtual void use(int idx, ICharacter& target);
 };
-
-#endif

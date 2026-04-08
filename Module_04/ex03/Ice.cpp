@@ -1,39 +1,37 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:18:01 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/21 21:36:35 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-Ice::Ice(std::string const & tmp): AMateria(tmp){
+Ice::Ice():AMateria("ice")
+{
     ft_log("Ice Default constructor called");
 }
 
-Ice::Ice(const Ice &tmp): AMateria(tmp){
+Ice::Ice(const Ice& tmp):AMateria(tmp)
+{
     ft_log("Ice copy constructor called");
 }
 
-Ice& Ice::operator=(const Ice &tmp){
+Ice& Ice::operator=(const Ice& tmp)
+{
     ft_log("Ice Copy assignment operator called");
-    (void) tmp;
+    if(this != &tmp)
+    {
+        AMateria::operator=(tmp);
+    }
     return *this;
 }
 
-Ice::~Ice(){
+Ice::~Ice()
+{
     ft_log("Ice Default Distructor called");
 }
 
-Ice* Ice::clone() const{
-    return new Ice("ice");
+
+AMateria* Ice::clone() const
+{
+    return new Ice(*this);
 }
 
-void Ice::use(ICharacter& target){
-    ft_log("* shoots an ice bolt at "<< target.getName() <<" *");
+void Ice::use(ICharacter& target)
+{
+    ft_log("* shoots an ice bolt at " << target.getName() << " *");
 }

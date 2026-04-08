@@ -1,29 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 11:43:26 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 12:41:52 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef DOG_HPP
-# define DOG_HPP
+#pragma once
 
 #include "main.hpp"
 
 class Dog: public Animal{
     
     public:
-        Dog(std::string tmp = "Dog");
+        Dog(std::string name = "Dog");
         Dog(const Dog& tmp);
         Dog& operator=(const Dog&tmp);
-        ~Dog();
+        virtual ~Dog();
 
-        void makeSound() const;
+        virtual void makeSound() const;
 };
-
-#endif

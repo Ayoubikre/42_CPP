@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aakritah <aakritah@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 13:04:34 by aakritah          #+#    #+#             */
-/*   Updated: 2025/10/20 13:05:49 by aakritah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "main.hpp"
 
-WrongAnimal::WrongAnimal():type("Unknown")
+WrongAnimal::WrongAnimal(std::string name):type(name)
 {
     ft_log("WrongAnimal Default constructor called");
 }
@@ -42,4 +30,7 @@ void WrongAnimal::makeSound() const
     ft_log("S............W_A..............S");
 }
 
-const std::string WrongAnimal::getType() const { return type; }
+const std::string WrongAnimal::getType() const 
+{ 
+    return type; 
+}
