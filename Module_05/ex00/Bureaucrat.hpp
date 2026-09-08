@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include <exception>
 
 #define ft_log_(x) std::cout << x
@@ -12,7 +13,7 @@ class Bureaucrat{
         int grade;
 
     public:
-        Bureaucrat(std::string name ="default" , int grade = 100);
+        Bureaucrat(const std::string& name ="default" , int grade = 100);
         Bureaucrat(const Bureaucrat& tmp);
         Bureaucrat& operator=(const Bureaucrat& tmp);
         ~Bureaucrat();
@@ -20,8 +21,8 @@ class Bureaucrat{
         std::string getName() const;
         int getGrade() const;
 
-        void ft_increase();
-        void ft_Decrease();
+        void ft_increment();
+        void ft_decrement();
         
         class GradeTooHighException : public std::exception
         {
