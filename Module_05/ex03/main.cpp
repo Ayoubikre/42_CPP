@@ -1,30 +1,38 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <cstdlib>
 #include <ctime>
 
+// void f() {
+//     system("leaks Ex"); 
+// }
+
 int main()
 {
+    // atexit(f);
+
     srand(time(NULL));
     try
     {
         Bureaucrat a("ay", 50);
         // Bureaucrat a("ay", 1);
 
-        ShrubberyCreationForm f1("target_1");
-        RobotomyRequestForm f2("target_2");
-        PresidentialPardonForm f3("target_3");
-
-        a.signForm(f1);
-        a.signForm(f2);
-        a.signForm(f3);
-
-        a.executeForm(f1);
-        a.executeForm(f2);
-        a.executeForm(f3);
+        Intern someRandomIntern;
+        AForm* f;
+        f = someRandomIntern.makeForm("robotomy requkest", "Bender");
+        if(!f)
+            return 0;
+        a.signForm(*f);
+        a.executeForm(*f);
+        delete(f);
+    }
+    catch(Intern::InternError& e)
+    {
+        ft_log("Error 0 :" << e.what());
     }
     catch(Bureaucrat::GradeTooHighException& e)
     {
@@ -46,6 +54,4 @@ int main()
     {
         ft_log("Error G :" << e.what());
     }
-
-
 }

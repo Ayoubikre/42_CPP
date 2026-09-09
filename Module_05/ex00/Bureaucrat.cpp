@@ -57,12 +57,12 @@ void Bureaucrat::ft_decrement()
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return("grade is hight");
+    return("Bureaucrat grade is hight");
 }
 
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return("grade is low");
+    return("Bureaucrat grade is low");
 }
 
 std::ostream& operator<<(std::ostream& out,const Bureaucrat& tmp)

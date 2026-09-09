@@ -27,8 +27,7 @@ Form& Form::operator=(const Form& tmp)
 
 Form::~Form()
 {
-    // ft_log(name << " is deleted");
-
+    ft_log(name << " is deleted");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
@@ -56,7 +55,7 @@ int Form::ft_get_sign_R() const
     return required_sign;
 }
 
-int Form::ft_get_sign_E() const
+int Form::ft_get_exec_R() const
 {
     return required_exec;
 }
@@ -75,7 +74,7 @@ std::ostream& operator<<(std::ostream& out , const Form& tmp)
         << "name : " << tmp.ft_getName() << std::endl
         << "status : " << tmp.ft_get_sign() << std::endl
         << "required_sign : " << tmp.ft_get_sign_R() << std::endl
-        << "required_exec : " << tmp.ft_get_sign_E() << std::endl;
+        << "required_exec : " << tmp.ft_get_exec_R() << std::endl;
 
     return out;
 }
