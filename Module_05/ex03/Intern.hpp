@@ -8,6 +8,12 @@
 
 class Intern
 {
+    private:
+        AForm* C_Shrubbery(std::string T_name);
+        AForm* C_Robotomy(std::string T_name);
+        AForm* C_Presidential(std::string T_name);
+
+
     public:
         Intern();
         Intern(const Intern& tmp);
@@ -18,7 +24,7 @@ class Intern
         {
             public:
                 virtual const char* what() const throw();
-        };
+        };        
 
         AForm* makeForm(std::string F_name, std::string T_name);
 };

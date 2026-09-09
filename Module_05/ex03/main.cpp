@@ -7,14 +7,9 @@
 #include <cstdlib>
 #include <ctime>
 
-// void f() {
-//     system("leaks Ex"); 
-// }
 
 int main()
 {
-    // atexit(f);
-
     srand(time(NULL));
     try
     {
@@ -23,7 +18,7 @@ int main()
 
         Intern someRandomIntern;
         AForm* f;
-        f = someRandomIntern.makeForm("robotomy requkest", "Bender");
+        f = someRandomIntern.makeForm("robotomy request", "Bender");
         if(!f)
             return 0;
         a.signForm(*f);
