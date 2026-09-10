@@ -3,27 +3,32 @@
 
 int ft_check_type(std::string t)
 {
-
+    if(t.length()==1 && !isdigit(t[0]))
+        return 1;
+    
+    
+    
+    return 0;
 }
 
 void ft_char(std::string t)
 {
-
+    ft_log("it a char");
 }
 
 void ft_int(std::string t)
 {
-
+    ft_log("it a int");
 }
 
 void ft_float(std::string t)
 {
-
+    ft_log("it a float");
 }
 
 void ft_double(std::string t)
 {
-
+    ft_log("it a double");
 }
 
 void ScalarConverter::convert(std::string t)
