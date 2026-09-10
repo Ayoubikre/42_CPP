@@ -1,19 +1,20 @@
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+# CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS =  -std=c++98
 
-SRC = 
+SRC = main.cpp ScalarConverter.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= ScalarConverter.hpp
 
 NAME = Ex
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo "" && ./EX
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
