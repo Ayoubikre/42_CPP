@@ -2,7 +2,8 @@
 
 #include <iostream>
 #include <string>
-#include <ctype.h>
+#include <limits>
+#include <cstdlib>
 
 #define ft_log_(x) std::cout<< x
 #define ft_log(x) std::cout<< x <<std::endl

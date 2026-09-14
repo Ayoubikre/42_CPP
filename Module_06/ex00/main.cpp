@@ -6,8 +6,8 @@
 
 int main()
 {
-
-    ScalarConverter::convert("a");
+    
+    ScalarConverter::convert("3.2f");
 
 
     // char i = 'a';

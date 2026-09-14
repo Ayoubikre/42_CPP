@@ -14,7 +14,7 @@ NAME = Ex
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo "" && ./EX
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo "" && ./Ex
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
