@@ -18,10 +18,10 @@ void ft_char(std::string t)
     float   x3= static_cast<float>(x1);
     double  x4= static_cast<double>(x1);
 
-    if((0 <= x1 && x1 <= 32)|| x1==127)
+    if((0 <= x1 && x1 < 32)|| x1==127)
         ft_log("char: Non displayable");
     else
-        ft_log("char: "<< x1);
+        ft_log("char: '"<< x1<<"'");
     
     ft_log("int: " << x2);
     ft_log("float: " << x3 << "f");
@@ -30,27 +30,62 @@ void ft_char(std::string t)
 
 void ft_int(std::string t)
 {
-    char *tmp;
-    // int x2= std::strtol(t.c_str(),tmp,10);
-    float x2= std::strtod(t.c_str(),&tmp);
-    // double x2= std::strtod(t.c_str(),&tmp);
+    char* tmp;
+    long x5=std::strtol(t.c_str(),&tmp, 10);
 
-    ft_log(x2);
-    ft_log(*tmp);
+    char    x1=static_cast<char>(x5);
+    int     x2= static_cast<int>(x5);
+    float   x3= static_cast<float>(x5);
+    double  x4= static_cast<double>(x5);
+
+    if((0 <= x1 && x1 < 32)|| x1==127)
+        ft_log("char: Non displayable");
+    else
+        ft_log("char: '"<< x1<<"'");
+    
+    ft_log("int: " << x2);
+    ft_log("float: " << x3 << "f");
+    ft_log("double: " << x4 );
 }
 
 void ft_float(std::string t)
 {
-    ft_log("it a float");
+    char *tmp;
+
+    float x3= static_cast<float>(std::strtod(t.c_str(),&tmp));
+
+    char x1=static_cast<char>(x3);
+    int x2=static_cast<int>(x3);
+    double x4=static_cast<double>(x3);
+
+    if((0 <= x1 && x1 < 32)|| x1==127)
+        ft_log("char: Non displayable");
+    else
+        ft_log("char: '"<< x1<<"'");
+    
+    ft_log("int: " << x2);
+    ft_log("float: " << x3 << "f");
+    ft_log("double: " << x4 );
 }
 
 void ft_double(std::string t)
 {
-    ft_log("it a double");
-}
+    char *tmp;
 
-void ft_errors(int n)
-{
+    double x4= std::strtod(t.c_str(),&tmp);
+
+    char x1=static_cast<char>(x4);
+    int x2=static_cast<int>(x4);
+    float x3=static_cast<double>(x4);
+
+    if((0 <= x1 && x1 < 32)|| x1==127)
+        ft_log("char: Non displayable");
+    else
+        ft_log("char: '"<< x1<<"'");
+    
+    ft_log("int: " << x2);
+    ft_log("float: " << x3 << "f");
+    ft_log("double: " << x4 );
 }
 
 void ScalarConverter::convert(std::string t)
@@ -71,7 +106,6 @@ void ScalarConverter::convert(std::string t)
             ft_double(t);
             break;
         default:
-            // ft_errors(n);
             ft_log("Error: the type is not supported");
             break;
     }
