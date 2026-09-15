@@ -2,8 +2,10 @@
 
 #include <iostream>
 #include <string>
-#include <limits>
 #include <cstdlib>
+#include <limits>
+#include <cmath>
+#include <iomanip>
 
 #define ft_log_(x) std::cout<< x
 #define ft_log(x) std::cout<< x <<std::endl

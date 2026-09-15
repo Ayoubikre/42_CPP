@@ -9,12 +9,12 @@ OBJ = $(SRC:.cpp=.o)
 
 HEAD= ScalarConverter.hpp
 
-NAME = Ex
+NAME = convert
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo "" && ./Ex
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@

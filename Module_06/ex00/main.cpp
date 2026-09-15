@@ -1,27 +1,16 @@
 #include "ScalarConverter.hpp"
-
 #include <iostream>
 #include <iomanip>
-
-
-int main()
+int main(int ac, char** ar)
 {
-    
-    ScalarConverter::convert("3.2f");
-
-
-    // char i = 'a';
-    // int i = 1;
-    // float i = 42.99f;
-    // double i = 126.5;
-
-    // char i = 54321111125.31231;
-
-    // std::cout << "char:   '" << static_cast<char>(i) << "'" << std::endl;
-    // std::cout << "int:    " << static_cast<int>(i) << std::endl;
-    // std::cout << std::fixed <<   "float:  " << static_cast<float>(i) << "f" << std::endl;
-    // std::cout <<  std::fixed << "double: " << static_cast<double>(i) << std::endl;
-
-
+    if(ac!=2)
+    {
+        ft_log("Usage: ./convert <var>");
+        ft_log("Examples:");
+        ft_log("\t./convert 0");
+        ft_log("\t./convert 42.0f");
+        return -1;
+    }
+    ScalarConverter::convert(ar[1]);
     return 0;
 }
