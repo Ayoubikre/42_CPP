@@ -1,6 +1,5 @@
 #include "ScalarConverter.hpp"
 
-
 int ft_check_type(std::string t)
 {
     if(t.length()==1 && !isdigit(t[0]))

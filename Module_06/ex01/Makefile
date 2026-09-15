@@ -1,14 +1,15 @@
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+# CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS =  -std=c++98
 
-SRC = 
+SRC = main.cpp Serializer.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= Serializer.hpp
 
-NAME = Ex
+NAME =  Serializer
 
 all: $(NAME)
 

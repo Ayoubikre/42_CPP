@@ -1,6 +1,5 @@
 #include "ScalarConverter.hpp"
-#include <iostream>
-#include <iomanip>
+
 int main(int ac, char** ar)
 {
     if(ac!=2)
