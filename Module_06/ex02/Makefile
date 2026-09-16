@@ -2,11 +2,11 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = 
+SRC = main.cpp  Base.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD= 
+HEAD= A.hpp B.hpp C.hpp Base.hpp
 
 NAME = Ex
 

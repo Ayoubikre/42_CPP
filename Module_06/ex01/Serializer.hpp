@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdint.h>
 
 #define ft_log_(x) std::cout<< x
 #define ft_log(x) std::cout<< x <<std::endl
@@ -9,7 +10,7 @@
 struct Data{
     int i;
     std::string name;
-}   t_Data;
+};
 
 
 class Serializer{
