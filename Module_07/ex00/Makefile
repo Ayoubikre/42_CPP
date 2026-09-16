@@ -6,7 +6,7 @@ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD=
+HEAD= whatever.hpp
 
 NAME = Ex
 
