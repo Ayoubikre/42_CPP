@@ -2,11 +2,11 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD=
+HEAD= Array.hpp
 
 NAME = Ex
 
