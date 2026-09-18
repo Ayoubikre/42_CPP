@@ -17,11 +17,11 @@ class Array {
         Array(unsigned int n);
         Array(const Array& tmp);
         Array& operator=(const Array& tmp);
-        ~Array()
+        Array& operator[](const Array& tmp);
+        ~Array();
+
+        unsigned int size() const;
 };
-
-
-
 
 
 
