@@ -14,14 +14,23 @@ Array<X>::Array(unsigned int n): s1(n)
 }
 
 template<typename X>
-Array<X>::Array(const Array& tmp)
+Array<X>::Array(const Array& tmp):s1(tmp.s1)
 {
 
+    t=new X[tmp.s1]();
+    for(unsigned int i=0;i<tmp.s1;i++)
+        t[i]=tmp.t[i];
+
+    ft_log("copy construct is created");
 }
 
 template<typename X>
-Array& Array<X>::operatore=(const Array& tmp)
+Array<X>& Array<X>::operator=(const Array<X>& tmp)
 {
+    if(this != &tmp)
+    {
+        // for(unsigned int =0; i)
+    }
 
 }
 

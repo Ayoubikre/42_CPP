@@ -16,7 +16,7 @@ class Array {
         Array();
         Array(unsigned int n);
         Array(const Array& tmp);
-        Array& operatore=(const Array& tmp);
+        Array& operator=(const Array& tmp);
         ~Array()
 };
 
