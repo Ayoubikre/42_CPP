@@ -1,10 +1,12 @@
-#include <iostream>
 #include "Array.hpp"
+#include <stdlib.h>
 
-#define MAX_VAL 750
+#define MAX_VAL 3
 int main(int, char**)
 {
+
     Array<int> numbers(MAX_VAL);
+    // Array<int> numbers2(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
 
@@ -15,6 +17,13 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
+    // numbers2=numbers;
+    // for(unsigned int i=0;i<MAX_VAL;i++)
+    // {
+    //     ft_log(numbers[i]);
+    //     ft_log(numbers2[i]);
+    //     ft_log(mirror[i]);
+    // }
     //SCOPE
     {
         Array<int> tmp = numbers;
@@ -50,6 +59,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 #define ft_log_(x) std::cout<< x
 #define ft_log(x) std::cout<< x <<std::endl
@@ -17,7 +18,8 @@ class Array {
         Array(unsigned int n);
         Array(const Array& tmp);
         Array& operator=(const Array& tmp);
-        Array& operator[](const Array& tmp);
+        X& operator[](unsigned int i);
+        const X& operator[](unsigned int i) const;
         ~Array();
 
         unsigned int size() const;
