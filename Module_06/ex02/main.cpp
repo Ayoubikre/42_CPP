@@ -2,11 +2,10 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <ctime>
 
 int main()
 {
-    srand(time(NULL));
+    std::srand(std::time(NULL));
     
     Base *tmp = generate();
     identify(tmp);

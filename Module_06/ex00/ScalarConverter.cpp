@@ -10,6 +10,9 @@ int ft_check_type(std::string t)
 
     if(t=="-inf" || t=="+inf" || t=="inf" || t=="nan")
         return (4);
+        
+    if(t.length()<1)
+        return (-1);
 
     long i=0;
     if(t[0]=='-' || t[0]=='+')

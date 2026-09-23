@@ -2,11 +2,10 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <cstdlib>
 
 Base* generate(void)
 {
-    int n=rand() % 3;
+    int n=std::rand() % 3;
     Base* tmp = NULL;
 
     if(n==0)
