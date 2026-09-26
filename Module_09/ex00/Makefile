@@ -14,7 +14,7 @@ NAME = btc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./btc input.txt
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
