@@ -16,7 +16,7 @@
 class RPN
 {
     private:
-        std::stack<int> t;
+        std::stack<long> t;
     
     private:
         int ft_validate(std::string tmp);
@@ -27,5 +27,5 @@ class RPN
         RPN& operator=(const RPN& tmp);
         ~RPN();
 
-        int ft_calcule(std::string str);
+        long ft_calcule(std::string str);
 };

@@ -24,13 +24,13 @@ int RPN::ft_validate(std::string tmp)
 }
 
         
-int RPN::ft_calcule(std::string str)
+long RPN::ft_calcule(std::string str)
 {
     std::stringstream in(str);
     std::string tmp;
 
-    int n1;
-    int n2;
+    long n1;
+    long n2;
     char c;
 
     while(in >> tmp)
