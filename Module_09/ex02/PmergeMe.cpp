@@ -47,10 +47,12 @@ int PmergeMe::ft_parse(char** ar)
     return 1;
 }
 
-std::vector<int> PmergeMe::ft_jacobsthal(std::vector<int>& m, std::vector<int>& p)
-{
+// std::vector<int> PmergeMe::ft_jacobsthal(std::vector<int>& m, std::vector<int>& p)
+// {
 
-}
+
+
+// }
 
 void PmergeMe::ft_sort_v(std::vector<int>& v)
 {
@@ -139,7 +141,7 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
 
 
     //strtat the jakson thingy
-    v=ft_jacobsthal(m, p);
+    // v=ft_jacobsthal(m, p);
 }
 
 void PmergeMe::ft_sort_q(std::deque<int>& q)

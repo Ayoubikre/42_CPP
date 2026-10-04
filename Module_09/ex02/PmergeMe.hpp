@@ -9,6 +9,7 @@
 #include <deque>
 #include <utility>
 #include <sys/time.h>
+#include <cstdlib>
 
 #define ft_log_(x) std::cout << x
 #define ft_log(x) std::cout << x << std::endl
@@ -30,6 +31,5 @@ class PmergeMe
         void ft_solve(char** ar);
         void ft_sort_q(std::deque<int>& q);
         void ft_sort_v(std::vector<int>& v);
-        std::vector<int> ft_jacobsthal(std::vector<int>& m, std::vector<int>& p)
-
+        // std::vector<int> ft_jacobsthal(std::vector<int>& m, std::vector<int>& p);
 };
