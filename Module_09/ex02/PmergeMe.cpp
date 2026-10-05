@@ -1,12 +1,8 @@
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe()
-{
-}
+PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe& tmp):v(tmp.v), q(tmp.q)
-{
-}
+PmergeMe::PmergeMe(const PmergeMe& tmp):v(tmp.v), q(tmp.q) {}
 
 PmergeMe& PmergeMe::operator=(const PmergeMe& tmp)
 {
@@ -18,9 +14,7 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& tmp)
     return *this;
 }
 
-PmergeMe::~PmergeMe()
-{
-}
+PmergeMe::~PmergeMe() {}
 
 long long get_timestamp(void)
 {
@@ -28,6 +22,21 @@ long long get_timestamp(void)
 
 	gettimeofday(&tv, NULL);
 	return ((tv.tv_sec * 1000000LL) + tv.tv_usec);
+}
+
+void PmergeMe::ft_print(std::vector<int> v)
+{
+    int i = -1;
+
+    while(++i < v.size())
+    {
+        if(i == v.size()-1)
+        {
+            ft_log(" " << v[i]);
+            break;
+        }
+        ft_log_(" " << v[i] << " ");
+    }
 }
 
 int PmergeMe::ft_parse(char** ar)
@@ -47,16 +56,11 @@ int PmergeMe::ft_parse(char** ar)
     return 1;
 }
 
-// std::vector<int> PmergeMe::ft_jacobsthal(std::vector<int>& m, std::vector<int>& p)
-// {
 
-
-
-// }
 
 void PmergeMe::ft_sort_v(std::vector<int>& v)
 {
-    int left=0;
+    int left= -1;
     std::vector< std::pair<int, int> > pairs;
 
     //edge cases
@@ -76,7 +80,7 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
             std::swap(pairs[i].first, pairs[i].second);
 
 
-    //     ft_log("*********");
+        // ft_log("*********");
     // for(int i=0; i<pairs.size();i++)
     // {
     //     ft_log(pairs[i].first);
@@ -100,13 +104,21 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
     // recursion on that vectore "it ordeard withe Jacobsthal thingy on recursion return"
     ft_sort_v(ww);
 
+
     //craet the new sorted pair vector
     std::vector< std::pair<int, int> > s_pairs;
     for(int i=0; i<ww.size();i++)
     {
         for(int y=0; y<pairs.size();y++)
+        {
             if(ww[i] == pairs[y].second)
+            {
                 s_pairs.push_back(pairs[y]);
+                pairs[y].second = -1; 
+
+                break; 
+            }
+        }
     }
 
 
@@ -140,56 +152,61 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
     // ft_log("");
 
 
-    //strtat the jakson thingy
-    // v=ft_jacobsthal(m, p);
-}
+    int jc_1 = 1;
+    int jc_2 = 1;
+    int jc;
 
-void PmergeMe::ft_sort_q(std::deque<int>& q)
-{
+    while (1)
+    {
+        jc = jc_1 + jc_2 * 2;
+        
+        int start = jc - 2;
+        if (start >= (int)p.size())
+            start = p.size() - 1;
 
+        if (start <= jc_1 - 2)
+            break;
+
+        for (int i = start; i > jc_1 - 2; i--)
+        {
+            std::vector<int>::iterator itr = std::lower_bound(m.begin(), m.end(), p[i]); 
+            m.insert(itr, p[i]);
+        }
+
+        jc_2 = jc_1;
+        jc_1 = jc;
+    }
+
+    if(left!=-1)
+    {
+        std::vector<int>::iterator itr = std::lower_bound(m.begin(), m.end(), left);
+        m.insert(itr, left);
+    }
+
+    v=m;
 }
 
 void PmergeMe::ft_solve(char** ar)
 {
-    int i;
-
     if(!ft_parse(ar))
         throw std::runtime_error("Error: Invalude argument");
     
-    ft_log_("Before : ");
-    i=-1;
-    while(++i < v.size())
-    {
-        if(i == v.size()-1)
-        {
-            ft_log(" " << v[i]);
-            break;
-        }
-        ft_log_(" " << v[i] << " ");
-    }
 
-    double start_1=get_timestamp();
-        ft_sort_v(v);
-    double end_1=get_timestamp() - start_1;
+    ft_log_("Before : "); ft_print(v);
+
+        double start_1=get_timestamp();
+            ft_sort_v(v);
+        double end_1=get_timestamp() - start_1;
 
 
-    double start_2=get_timestamp();
-        ft_sort_q(q);
-    double end_2=get_timestamp() - start_2;
+        // double start_2=get_timestamp();
+        //     ft_sort_q(q);
+        // double end_2=get_timestamp() - start_2;
 
-    ft_log_("After  : ");
-    i=-1;
-    while(++i < v.size())
-    {
-        if(i == v.size()-1)
-        {
-            ft_log(" " << v[i]);
-            break;
-        }
-        ft_log_(" " << v[i] << " ");
-    }
+    ft_log_("After  : "); ft_print(v);
+
 
     ft_log(std::fixed << std::setprecision(5));
     ft_log("Time to process a range of "<< v.size() << " elements with a vector: " << end_1 << " us");
-    ft_log("Time to process a range of "<< q.size() << " elements with a deque: " << end_2 << " us");
+    // ft_log("Time to process a range of "<< q.size() << " elements with a deque: " << end_2 << " us");
 }

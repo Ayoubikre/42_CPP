@@ -29,7 +29,7 @@ class PmergeMe
 
         int  ft_parse(char** ar);
         void ft_solve(char** ar);
-        void ft_sort_q(std::deque<int>& q);
         void ft_sort_v(std::vector<int>& v);
-        // std::vector<int> ft_jacobsthal(std::vector<int>& m, std::vector<int>& p);
+        void ft_print(std::vector<int> v);
+        std::vector<int> ft_jacobsthal(std::vector<int>& m, std::vector<int>& p);
 };
