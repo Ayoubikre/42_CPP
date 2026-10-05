@@ -1,7 +1,6 @@
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-# CFLAGS = -std=c++98
 
 SRC = main.cpp PmergeMe.cpp
 
@@ -14,7 +13,7 @@ NAME = PmergeMe
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) && echo && ./PmergeMe 10 3 4 7 9 1 20 30
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
