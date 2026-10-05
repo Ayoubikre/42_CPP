@@ -28,9 +28,9 @@ void PmergeMe::ft_print(std::vector<int> v)
 {
     int i = -1;
 
-    while(++i < v.size())
+    while(++i < (int)v.size())
     {
-        if(i == v.size()-1)
+        if(i == (int)v.size()-1)
         {
             ft_log(" " << v[i]);
             break;
@@ -62,6 +62,7 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
 {
     int left= -1;
     std::vector< std::pair<int, int> > pairs;
+    std::vector<int> ww;
 
     //edge cases
     if(v.size()<2)
@@ -70,50 +71,33 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
     if(v.size()%2 != 0)
         left=v[v.size()-1];
 
-    //creat pairs
-    for(int i=0; i<v.size()-1;i+=2)
+
+    //creat pairs, and the big elements 'ww' array
+    for(int i=0; i<(int)v.size()-1;i+=2)
+    {
+        if(v[i] > v[i+1])
+            std::swap(v[i], v[i+1]);
         pairs.push_back(std::make_pair(v[i], v[i+1]));
+        ww.push_back(v[i+1]);
+    }
 
-    //order each pair: left, right
-    for(int i=0; i<pairs.size();i++)
-        if(pairs[i].first > pairs[i].second)
-            std::swap(pairs[i].first, pairs[i].second);
-
-
-        // ft_log("*********");
-    // for(int i=0; i<pairs.size();i++)
-    // {
-    //     ft_log(pairs[i].first);
-    //     ft_log(pairs[i].second);
-    // }
-
-        // ft_log("------");
-
-
-    // creat vectore withe bigest elent of each pair
-    std::vector<int> ww;
-    for(int i=0; i<pairs.size();i++)
-         ww.push_back(pairs[i].second);
-
-
-    // for(int i=0; i<ww.size();i++)
-    //     ft_log(ww[i]);
-    // ft_log("*********");
-    // ft_log("");
-
-    // recursion on that vectore "it ordeard withe Jacobsthal thingy on recursion return"
+    // recursion
     ft_sort_v(ww);
 
 
-    //craet the new sorted pair vector
-    std::vector< std::pair<int, int> > s_pairs;
-    for(int i=0; i<ww.size();i++)
+    //creat the main and panding vectore to prepar for Jacobsthal 
+    std::vector<int> m;
+    std::vector<int> p;
+
+    for(int i=0; i<(int)ww.size();i++)
     {
-        for(int y=0; y<pairs.size();y++)
+        for(int y=0; y<(int)pairs.size();y++)
         {
             if(ww[i] == pairs[y].second)
             {
-                s_pairs.push_back(pairs[y]);
+                p.push_back(pairs[y].first);
+                m.push_back(pairs[y].second);
+
                 pairs[y].second = -1; 
 
                 break; 
@@ -121,60 +105,38 @@ void PmergeMe::ft_sort_v(std::vector<int>& v)
         }
     }
 
+    //Jacobsthal :
+    int jacob_2=1;
+    int jacob_1=1;
+    int count=0;
 
-    //creat the main and panding vectore to prepar for Jacobsthal thingy
-    std::vector<int> m;
-    std::vector<int> p;
-    for(int i=0; i<s_pairs.size();i++)
+    if (!p.empty())
     {
-       if(i==0)
-       {
-            m.push_back(s_pairs[i].first);
-            m.push_back(s_pairs[i].second);
-       }
-       else{
-            p.push_back(s_pairs[i].first);
-            m.push_back(s_pairs[i].second);
-       }
+        m.insert(m.begin(), p[0]);
+        count++;
     }
-
-    // ft_log("@@@@@@@");
-    // for(int i=0; i<m.size();i++)
-    // {
-    //     ft_log(m[i]);
-    // }
-    //     ft_log("^^^^");
-    // for(int i=0; i<p.size();i++)
-    // {
-    //     ft_log(p[i]);
-    // }
-    // ft_log("@@@@@@@");
-    // ft_log("");
-
-
-    int jc_1 = 1;
-    int jc_2 = 1;
-    int jc;
-
-    while (1)
+    
+    while(1)
     {
-        jc = jc_1 + jc_2 * 2;
-        
-        int start = jc - 2;
-        if (start >= (int)p.size())
-            start = p.size() - 1;
+        int jc = jacob_1 + jacob_2 * 2;
 
-        if (start <= jc_1 - 2)
+        if(jacob_1>=(int)p.size())
             break;
 
-        for (int i = start; i > jc_1 - 2; i--)
+        int s = jc-1;
+        if(s>=(int)p.size())
+            s=p.size()-1;
+
+        while(s > jacob_1 - 1)
         {
-            std::vector<int>::iterator itr = std::lower_bound(m.begin(), m.end(), p[i]); 
-            m.insert(itr, p[i]);
+            std::vector<int>::iterator itr= std::lower_bound(m.begin(), m.begin() + s + count + 1 , p[s]);
+
+            m.insert(itr, p[s]);
+
+            s--; count++;
         }
 
-        jc_2 = jc_1;
-        jc_1 = jc;
+        jacob_2=jacob_1;  jacob_1=jc;
     }
 
     if(left!=-1)
