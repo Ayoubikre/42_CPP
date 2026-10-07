@@ -198,7 +198,7 @@ void BitcoinExchange::ft_load_data(std::string ar)
         
     }catch(std::exception& e)
     {
-        ft_log(e.what());
+        ft_log_r(e.what());
     }
 
 
@@ -234,7 +234,7 @@ void BitcoinExchange::ft_load_data(std::string ar)
 
         }catch(std::exception& e)
         {
-            ft_log(e.what());
+            ft_log_r(e.what());
         }
     }
 }

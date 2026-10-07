@@ -4,7 +4,7 @@ int main(int ac, char** ar)
 {
     if(ac<2)
     {
-        ft_log("Usage: ./PmergeMe " << "9 2 1 4");
+        ft_log_r("Usage: ./PmergeMe " << "9 2 1 4");
         return -1;
     }
     

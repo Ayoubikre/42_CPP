@@ -49,6 +49,182 @@ int PmergeMe::ft_parse(char** ar)
     return 1;
 }
 
+void PmergeMe::ft_sort_v(std::vector<int>& v)
+{
+    int left= -1;
+    std::vector< std::pair<int,int> > pairs;
+    std::vector<int> ww;
+    std::vector<int>::iterator itr;
+
+    //edge cases
+    if(v.size()<2)
+        return ;
+        
+    if(v.size()%2 != 0)
+        left=v[v.size()-1];
+
+
+    //creat pairs, and the big elements 'ww' array
+    for(int i=0; i<(int)v.size()-1;i+=2)
+    {
+        if(v[i] > v[i+1])
+            std::swap(v[i], v[i+1]);
+        pairs.push_back(std::make_pair(v[i], v[i+1]));
+        ww.push_back(v[i+1]);
+    }
+
+    // recursion
+    ft_sort_v(ww);
+
+    //creat the main and panding vectore to prepar for Jacobsthal 
+    std::vector<int> m;
+    std::vector<int> p;
+
+    for(int i=0; i<(int)ww.size();i++)
+    {
+        for(int y=0; y<(int)pairs.size();y++)
+        {
+            if(ww[i] == pairs[y].second)
+            {
+                p.push_back(pairs[y].first);
+                m.push_back(pairs[y].second);
+
+                pairs[y].second = -1; 
+
+                break; 
+            }
+        }
+    }
+
+    //Jacobsthal :
+    int jacob_2=1;
+    int jacob_1=1;
+    int count=0;
+
+    if (!p.empty())
+    {
+        m.insert(m.begin(), p[0]);
+        count++;
+    }
+    
+    while(1)
+    {
+        int jc = jacob_1 + jacob_2 * 2;
+
+        if(jacob_1>=(int)p.size())
+            break;
+
+        int s = jc-1;
+        if(s>=(int)p.size())
+            s=p.size()-1;
+
+        while(s > jacob_1 - 1)
+        {
+            itr= std::lower_bound(m.begin(), m.begin() + s + count + 1 , p[s]);
+
+            m.insert(itr, p[s]);
+
+            s--; count++;
+        }
+
+        jacob_2=jacob_1;  jacob_1=jc;
+    }
+
+    if(left!=-1)
+    {
+        itr = std::lower_bound(m.begin(), m.end(), left);
+        m.insert(itr, left);
+    }
+
+    v=m;
+}
+
+void PmergeMe::ft_sort_q(std::deque<int>& q)
+{
+    int left= -1;
+    std::deque< std::pair<int,int> > pairs;
+    std::deque<int> ww;
+    std::deque<int>::iterator itr;
+
+    if(q.size()<2)
+        return ;
+        
+    if(q.size()%2 != 0)
+        left=q[q.size()-1];
+
+
+    for(int i=0; i<(int)q.size()-1;i+=2)
+    {
+        if(q[i] > q[i+1])
+            std::swap(q[i], q[i+1]);
+        pairs.push_back(std::make_pair(q[i], q[i+1]));
+        ww.push_back(q[i+1]);
+    }
+
+    ft_sort_q(ww);
+
+
+    std::deque<int> m;
+    std::deque<int> p;
+
+    for(int i=0; i<(int)ww.size();i++)
+    {
+        for(int y=0; y<(int)pairs.size();y++)
+        {
+            if(ww[i] == pairs[y].second)
+            {
+                p.push_back(pairs[y].first);
+                m.push_back(pairs[y].second);
+
+                pairs[y].second = -1; 
+
+                break; 
+            }
+        }
+    }
+
+    int jacob_2=1;
+    int jacob_1=1;
+    int count=0;
+
+    if (!p.empty())
+    {
+        m.push_front(p[0]);
+        count++;
+    }
+    
+    while(1)
+    {
+        int jc = jacob_1 + jacob_2 * 2;
+
+        if(jacob_1>=(int)p.size())
+            break;
+
+        int s = jc-1;
+        if(s>=(int)p.size())
+            s=p.size()-1;
+
+        while(s > jacob_1 - 1)
+        {
+            itr= std::lower_bound(m.begin(), m.begin() + s + count + 1 , p[s]);
+
+            m.insert(itr, p[s]);
+
+            s--; count++;
+        }
+
+        jacob_2=jacob_1;  jacob_1=jc;
+    }
+
+    if(left!=-1)
+    {
+        itr = std::lower_bound(m.begin(), m.end(), left);
+        m.insert(itr, left);
+    }
+
+    q=m;
+}
+
 void PmergeMe::ft_solve(char** ar)
 {
     if(!ft_parse(ar))
@@ -58,12 +234,12 @@ void PmergeMe::ft_solve(char** ar)
     ft_log_("Before : "); ft_print(v);
 
         double start_1=get_timestamp();
-            ft_sort < std::vector<int> , std::vector< std::pair<int,int> > >(v);
+            ft_sort_v(v);
         double end_1=get_timestamp() - start_1;
 
 
         double start_2=get_timestamp();
-            ft_sort < std::deque<int> , std::deque< std::pair<int,int> > >(q);
+            ft_sort_q(q);
         double end_2=get_timestamp() - start_2;
 
     ft_log_("After  : "); ft_print(v);

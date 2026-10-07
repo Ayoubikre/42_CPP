@@ -4,7 +4,7 @@ int main(int ac, char** ar)
 {
     if(ac!=2)
     {
-        ft_log("Usage: ./RPN " << "9 9 + 1 -");
+        ft_log_r("Usage: ./RPN " << "9 9 + 1 -");
         return -1;
     }
     

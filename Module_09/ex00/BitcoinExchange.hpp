@@ -14,6 +14,7 @@
 
 #define ft_log_(x) std::cout << x
 #define ft_log(x) std::cout << x << std::endl
+#define ft_log_r(x) std::cerr << x << std::endl
 
 class BitcoinExchange
 {

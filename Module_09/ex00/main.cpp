@@ -4,7 +4,7 @@ int main(int ac, char** ar)
 {
     if(ac!=2)
     {
-        ft_log("Usage: ./btc input.txt ");
+        ft_log_r("Usage: ./btc input.txt ");
         return -1;
     }
     
@@ -17,7 +17,7 @@ int main(int ac, char** ar)
 
     }catch(std::exception& e)
     {
-        ft_log(e.what());
+        ft_log_r(e.what());
     }
 
     return 0;
